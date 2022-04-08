@@ -6,7 +6,7 @@ const Meal = ({meals,handleCart}) => {
         <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 sm:justify-items-center gap-5'>
             {
                 meals.map( meal => 
-                    <div className='p-3 rounded text-center bg-lime-100'>
+                    <div className='p-3 rounded text-center bg-yellow-200'>
                         <img src={meal.strMealThumb} alt=""/>
                         <p className='text-xl py-2'>{meal.strMeal}</p>
                         <p>{meal.strInstructions.slice(0,100)}</p>
