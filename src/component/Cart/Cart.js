@@ -1,6 +1,7 @@
+import { TrashIcon } from "@heroicons/react/solid";
 import React from "react";
 
-const Cart = ({ cart,emptyCart }) => {
+const Cart = ({ cart,emptyCart,deleteItem }) => {
   return (
     <div className="bg-slate-500 sm:w-full p-3 sm:col-span-full md:col-auto sm:mt-3">
       <h1 className="text-3xl text-center">Cart</h1>
@@ -10,6 +11,7 @@ const Cart = ({ cart,emptyCart }) => {
             <th>Images</th>
             <th>Item Name</th>
             <th>Item Qty</th>
+            <th>Action</th>
           </tr>
           {cart.map((product) => (
             <tr>
@@ -21,6 +23,9 @@ const Cart = ({ cart,emptyCart }) => {
                 </td>
                 <td>
                     {product.qty}
+                </td>
+                <td>
+                    <button onClick={()=>deleteItem(product)} className="p-5 rounded-full"><TrashIcon className="w-5"></TrashIcon></button>
                 </td>
             </tr>
           ))}
